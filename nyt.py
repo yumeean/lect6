@@ -30,9 +30,10 @@ def get_article_data(keyword):
 
     headlines = map(get_headline, articles)
     snippets = map(get_snippet, articles)
-    url = map(get_url, articles)
+    urls = map(get_url, articles)
 
     return {
         'headlines': list(headlines),
         'snippets': list(snippets),
+        'urls': list(urls)
     }
