@@ -22,13 +22,18 @@ def get_article_data(keyword):
     def get_headline(article):
         return article['headline']['main']
 
+    def get_date(article):
+        return article['pub_date']
+    
     def get_snippet(article):
         return article['snippet']
 
     headlines = map(get_headline, articles)
     snippets = map(get_snippet, articles)
+    date = map(get_date, articles)
 
     return {
         'headlines': list(headlines),
         'snippets': list(snippets),
+        'dates': list(date),
     }
